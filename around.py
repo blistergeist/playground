@@ -62,7 +62,7 @@ def around_phrase(document, idxPhrase, target, range=20, matchCase=False):
 		print(t)
 		for p in idxPhrase:
 			print(p)
-			# LOOK AT THIS BITCH YOU HAVE SOMETHING WEIRD GOING ON WITH THE COUNTING OF TARGET HITSgit
+			# LOOK AT THIS BITCH YOU HAVE SOMETHING WEIRD GOING ON WITH THE COUNTING OF TARGET HITS
 			if abs(t-p[0])<=range or abs(t-p[1])<=range:
 				hitsTarget += 1
 	return hitsTarget
@@ -82,7 +82,7 @@ def turney(hitsPhrasePos, hitsPhraseNeg, hitsPos, hitsNeg):
 
 
 def main():
-	fileName = 'C:\\users\\mallison\\documents\\github\\playground\\test.txt'
+	fileName = 'test.txt'
 	with open(fileName) as f:
 		text = f.read()
 	word1 = 'yes'

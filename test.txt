@@ -13,3 +13,6 @@ yes no excellent
 yes no excellent
 yes no excellent
 yes no poor
+yes no poor
+yes no poor
+yes no poor
