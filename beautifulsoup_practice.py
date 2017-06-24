@@ -1,10 +1,12 @@
 # beautifulsoup_practice.py
 import urllib.request
+import requests
 from bs4 import BeautifulSoup
 
-html = urllib.request.urlopen('http://money.cnn.com/2016/12/23/technology/consumer-reports-macbook-pro/index.html')
-
-soup = BeautifulSoup(html, 'lxml')
+# html = urllib.request.urlopen('http://money.cnn.com/2016/12/23/technology/consumer-reports-macbook-pro/index.html')
+html = requests.get('http://money.cnn.com/2016/12/23/technology/consumer-reports-macbook-pro/index.html')
+print(html.text)
+soup = BeautifulSoup(html.text, 'lxml')
 
 # print(soup.title)
 # print(soup.title.name)
@@ -21,11 +23,11 @@ soup = BeautifulSoup(html, 'lxml')
 
 print(soup('script') == soup.find_all('script'))
 
-print(len(soup.find_all('script')), 'scripts nonono')
-print(len(soup.find_all('style')), 'styles nonono')
+print(len(soup.find_all('script')))
+print(len(soup.find_all('style')))
 for script in soup(['script']):
 	script.extract()
-print(len(soup.find_all('script')), 'scripts nonono')
+print(len(soup.find_all('script')))
 # iterTag = soup.html
 # for i in range(5):
 # 	iterTag = iterTag.next_element
