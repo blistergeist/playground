@@ -139,8 +139,10 @@ def main():
     # print('PMI of {} and {}: {}'.format('yes', 'no', pmi(
     #   results[0], results[1], results[2])))
 
+    badWords = ['loss', 'horror', 'disappointing', 'cutting', 'delay', 'failure', 'distress', 'soft', 'abysmal',
+                'bankruptcy']
     bigram = [word1, word2]
-    posTarget = 'excellent'
+    posTarget = 'loss'
     negTarget = 'poor'
     posPhraseHits, posHits = around_bigram(tokens, bigram, posTarget, range=10)
     negPhraseHits, negHits = around_bigram(tokens, bigram, negTarget, range=10)
